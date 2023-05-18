@@ -121,10 +121,9 @@ public class UDPThread extends Thread {
                 else if(ifconn[0].equals("CA1")) //odpowiedz z nadeslanymi plikami
                     Option.listaPikow = new String(inPacketConn.getData(), 5, inPacketConn.getLength()); 
                 
-                else if(ifconn[0].equals("THATSWHO")) {
-                	String m=new String(inPacketConn.getData(), 11, inPacketConn.getLength());
+                else if(ifconn[0].equals("THATSWHO") && !(ifconn[1].equals(Option.login)) && !(Integer.parseInt(ifconn[2]) == Option.TCPport)) {
+                	String m=ifconn[1]+ifconn[3]+" "+ifconn[4]+" "+ifconn[5]+" "+ifconn[6];
                 	System.out.println(m);
-                	System.out.println("xDDDDDDDDDDDDDDDDDD");
                 	
                 }
                 

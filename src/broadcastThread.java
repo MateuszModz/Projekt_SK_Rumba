@@ -63,11 +63,10 @@ public class broadcastThread extends Thread{
                 }
                 
                 else if(ifconn[0].equals("WHO")) { //kto obsluguje rumba
-                	String message="THATSWHO\n"+Option.login+": Obsluguje protokol Rumba!";
+                	String message="THATSWHO "+Option.login+" "+Option.TCPport+" : Obsluguje protokol Rumba!";
                 	outBuf = message.getBytes();
 	           		outPacketConn = new DatagramPacket(outBuf, 0, outBuf.length, clientAdress, clientPort);
                 	broadcastSocket.send(outPacketConn);
-                	System.out.println("Dotarło!!!!!!!!!");
                 }
                 
                 else if(ifconn[0].equals("CRM")) //rezygnowanie z uslugi (opcja 3)
