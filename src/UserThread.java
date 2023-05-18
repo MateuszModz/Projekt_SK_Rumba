@@ -39,12 +39,16 @@ public class UserThread extends Thread{
 			Option.CBMessage = "CB" +" "+ Option.login +" "+ Option.TCPport; //wiadomosc do broadcastu tworzona	(kazdy klient, ktory dostanie taki komunikat dodaje do listy klientow te osobek)				
 			Methods.sendBroadcast(userSocket, Option.CBMessage);	//wyslanie broadcastu sendBroadcast(socket, message)
 			
+			//kto obsluguje protokol rumba
+			System.out.println("Kto obsluguje protokol Rumba?");
+			Option.CBMessage = "WHO";
+			Methods.sendBroadcast(userSocket, Option.CBMessage);
 			
         	while(true) 
         	{
 	          //------------------------MENU----------------------------------------------------
 				System.out.println("MENU:");
-				System.out.println("1 - Liczba Klientow");
+				System.out.println("1 - Lista Klientow");
 				System.out.println("2 - Pobranie pliku od wybranego klienta");
 				System.out.println("3 - Wyjscie");
 				System.out.println("Wybierz opcje:");			

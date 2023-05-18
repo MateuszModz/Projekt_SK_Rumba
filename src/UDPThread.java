@@ -46,6 +46,8 @@ public class UDPThread extends Thread {
                 String ifconn[] = data(inBuf).toString().split(" ");    //rozdzielenie odebranych danych
 
                 
+                
+                
                 if(ifconn[0].equals("CR1")) //prosba o wyslanie listy plikow (opcja 2)
                 {   
                     File f1=new File(Option.katalog);
@@ -118,7 +120,13 @@ public class UDPThread extends Thread {
                 }
                 else if(ifconn[0].equals("CA1")) //odpowiedz z nadeslanymi plikami
                     Option.listaPikow = new String(inPacketConn.getData(), 5, inPacketConn.getLength()); 
-
+                
+                else if(ifconn[0].equals("THATSWHO")) {
+                	String m=new String(inPacketConn.getData(), 11, inPacketConn.getLength());
+                	System.out.println(m);
+                	
+                }
+                
                 else if(ifconn[0].equals("CA2")) //odpowiedz czy wysle plik
                 {
                     if(ifconn[1].equals("OK"))

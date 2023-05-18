@@ -61,6 +61,14 @@ public class broadcastThread extends Thread{
 	           		outPacketConn = new DatagramPacket(outBuf, 0, outBuf.length, clientAdress, clientPort); //wyslanie odpowiedzi na broadcast
                     broadcastSocket.send(outPacketConn);
                 }
+                
+                else if(ifconn[0].equals("WHO")) { //kto obsluguje rumba
+                	String message="THATSWHO\n"+Option.login+": Obsluguje protokol Rumba!";
+                	outBuf = message.getBytes();
+	           		outPacketConn = new DatagramPacket(outBuf, 0, outBuf.length, clientAdress, clientPort);
+                	broadcastSocket.send(outPacketConn);
+                }
+                
                 else if(ifconn[0].equals("CRM")) //rezygnowanie z uslugi (opcja 3)
                 {
                     for(int i=0;i<Option.usersAll.size();i++) 
