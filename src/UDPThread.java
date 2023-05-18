@@ -124,6 +124,7 @@ public class UDPThread extends Thread {
                 else if(ifconn[0].equals("THATSWHO")) {
                 	String m=new String(inPacketConn.getData(), 11, inPacketConn.getLength());
                 	System.out.println(m);
+                	System.out.println("xDDDDDDDDDDDDDDDDDD");
                 	
                 }
                 

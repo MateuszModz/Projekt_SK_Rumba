@@ -43,6 +43,7 @@ public class UserThread extends Thread{
 			System.out.println("Kto obsluguje protokol Rumba?");
 			Option.CBMessage = "WHO";
 			Methods.sendBroadcast(userSocket, Option.CBMessage);
+			sleep(1000);
 			
         	while(true) 
         	{

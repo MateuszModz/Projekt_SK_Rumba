@@ -67,6 +67,7 @@ public class broadcastThread extends Thread{
                 	outBuf = message.getBytes();
 	           		outPacketConn = new DatagramPacket(outBuf, 0, outBuf.length, clientAdress, clientPort);
                 	broadcastSocket.send(outPacketConn);
+                	System.out.println("Dotarło!!!!!!!!!");
                 }
                 
                 else if(ifconn[0].equals("CRM")) //rezygnowanie z uslugi (opcja 3)
