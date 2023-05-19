@@ -23,13 +23,11 @@ public class UserThread extends Thread{
 			byte[] outBuf;
 
      		System.out.println("~~~~~RUMBA~~~~~");
-     		System.out.println("~~~~~MM & AK~~~~~");
      		
      		System.out.println("Podaj swoj login:");
      		Option.login=src.nextLine(); //pobiera login
      		
-			System.out.println("Podaj pelna sciezke do katalogu, ktory chcesz udostepnic innym");
-			System.out.println("np.:");
+			System.out.println("Podaj pelna sciezke do katalogu, ktory chcesz udostepnic innym, np.:");
 			System.out.println("WINDOWS: C:\\Users\\Nazwa_uzytkownika\\ ");
 			System.out.println("LINUKS:  /home/nazwa_uzytkownika/ ");
 			Option.katalog=src.nextLine(); //pobiera sciezke
@@ -48,7 +46,8 @@ public class UserThread extends Thread{
         	while(true) 
         	{
 	          //------------------------MENU----------------------------------------------------
-				System.out.println("MENU:");
+        		System.out.println("********************");
+        		System.out.println("MENU:");
 				System.out.println("1 - Lista Klientow");
 				System.out.println("2 - Pobranie pliku od wybranego klienta");
 				System.out.println("3 - Wyjscie");
@@ -61,7 +60,7 @@ public class UserThread extends Thread{
 					System.out.println("Obecnie jest " + Option.loginsAll.size() + " zalogowanych uzytkownikow.");
 
 					for(int i = 0; i < Option.loginsAll.size(); i++)
-						System.out.println(i + ". " +Option.loginsAll.get(i)); 	//tworzy liste uzytkownikow 1. User1
+						System.out.println((i+1) + ". " +Option.loginsAll.get(i)); 	//tworzy liste uzytkownikow 1. User1
 				}				
 				else if(wyborInt==2) //pobieranie pliku uzytkownika
 				{
